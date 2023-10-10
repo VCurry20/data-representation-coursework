@@ -102,55 +102,41 @@ retrieveTags=['TrainStatus',
 'Direction'
 ]
 
-headername = ['TrainStatus','TrainLatitude','TrainLongitude','TrainCode','TrainDate','PublicMessage','Direction'
-]
 
 with open('train_all.csv', mode='w', newline='') as train_fileall:
     train_writerall = csv.writer(train_fileall, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
-
+    objTrainPositionsNodes = doc.getElementsByTagName("objTrainPositions")
+    for objTrainPositionsNode in objTrainPositionsNodes:
     
-    dataList2 = []
-    for retrieveTag in retrieveTags:
-        datanode = objTrainPositionsNode.getElementsByTagName(retrieveTag).item(0)
-        dataList2.append(datanode.firstChild.nodeValue.strip())
+        dataList2 = []
+        for retrieveTag in retrieveTags:
+            datanode = objTrainPositionsNode.getElementsByTagName(retrieveTag).item(0)
+            dataList2.append(datanode.firstChild.nodeValue.strip())
 
         train_writerall.writerow(dataList2)
 
 
-# print all details of trains using their tags
-# for loop used
 
-retrieveTags=['TrainStatus',
-'TrainLatitude',
-'TrainLongitude',
-'TrainCode',
-'TrainDate',
-'PublicMessage',
-'Direction'
-]
+# filter all items - TrainCode - D
+#####
+# 
+check = 'D'
 
 
-with open('train_D.csv', mode='w', newline='') as train_fileall:
-    train_writerall = csv.writer(train_fileall, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-   
-    dataList2 = []
-    for retrieveTag in retrieveTags:
-        datanode = objTrainPositionsNode.getElementsByTagName(retrieveTag).item(0)
-        dataList2.append(datanode.firstChild.nodeValue.strip())
+with open('traincodes_D.csv', mode='w', newline='') as train_file:
+    train_writer = csv.writer(train_file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
-        train_writerall.writerow(dataList2)
+    objTrainPositionsNodes = doc.getElementsByTagName("objTrainPositions")
+    for objTrainPositionsNode in objTrainPositionsNodes:
+        trainCodenode = objTrainPositionsNode.getElementsByTagName("TrainCode").item(0)
+        trainCode = trainCodenode.firstChild.nodeValue.strip()
+     #print (trainCode)
 
-# https://www.quora.com/How-can-you-filter-large-CSV-files-in-Python
-# https://www.geeksforgeeks.org/python-find-the-list-elements-starting-with-specific-letter/
+        dataList_D = []
+        dataList.append(trainCode)
+        train_writer.writerow(dataList_D)
 
-check = "D"
+res = [idx for idx in dataList_D if idx[0].lower() == check.lower()]
 
-with open('train_D.csv', 'r') as input_file, open('output_file.csv', 'w', newline='') as output_file: 
-    reader = csv.reader(input_file) 
-    writer = csv.writer(output_file) 
-
-    for row in reader: 
-        if row[0] == re.match("^{}".format(check), trainCode.lower()): 
-            writer.writerow(row) 
-
+print res(dataList_D)
