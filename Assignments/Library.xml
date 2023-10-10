@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library>
+    <Catalogue name="Technical Books">
+	<Book name="TBook1"> 
+		<ISBN>ISBN = 1245262784</ISBN>
+		<Title>Tech Book1</Title>
+		<Author>Joe Walsh</Author>
+	</Book>
+	<Book name="TBook2">
+		<ISBN ISBN="4590937402">ISBN</ISBN>
+		<Title Title="Tech Book1">Tech Book12</Title>
+		<Author Author="Bob Dylan">Joe Walsh</Author>
+	</Book>
+    </Catalogue>
+
+    <Catalogue name="Cookery Books">
+	<Book name="CBook1"> 
+		<ISBN>ISBN = 4738629551</ISBN>
+		<Title>Cook Book1</Title>
+		<Author>Adam Ant</Author>
+	</Book>
+	<Book name="CBook2">
+		<ISBN ISBN="8934762859">ISBN</ISBN>
+		<Title Title="Cook Book2">Tech Book12</Title>
+		<Author Author="Ann Grant">Joe Walsh</Author>
+	</Book>
+    </Catalogue>
+</Library>
