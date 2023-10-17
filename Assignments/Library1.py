@@ -1,4 +1,8 @@
 # Exercise 1.1
+
+### This is an attempt to write code to complete this - not required - full XML file also included.
+
+
 # Create an XML file that stores data for a library (You can create this manually, I am not asking you to create a program to do this). 
 # The library has two catalogues (technical books, and for cookery books).
 # Each catalogue can contain a number of books (say 2 for the purpose of this exercise) . 
