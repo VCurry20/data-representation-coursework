@@ -2,6 +2,8 @@
 # Lab Topic 4
 # Requests
 
+# set up functions to take down data from the site and also a seperate py file to analyse it
+
 # json() - turns a request into a dict and we can then analyise it
 
 
