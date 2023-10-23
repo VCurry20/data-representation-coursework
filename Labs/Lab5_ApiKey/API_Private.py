@@ -24,7 +24,7 @@
 
 import requests
 import json
-from config import config as cfg
+from config2 import config as cfg
 
 filename = "repo_private.json"
 
