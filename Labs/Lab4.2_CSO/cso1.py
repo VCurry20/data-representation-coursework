@@ -82,7 +82,7 @@ def getAllFormatted(dataset):
    result = {}
    #currentDict = result
 
-
+# recursion is what would be needed to complete this without writing out all the code
    for dim0 in range(0, sizes[0]):
       currentId = ids[0]
       index = dimensions[currentId]["category"]["index"][dim0]
