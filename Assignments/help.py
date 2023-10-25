@@ -7,16 +7,31 @@
 from github import Github
 import requests
 import json
-from config import config as cfg
+#from config import config as cfg
 
 import numpy as np
 import pandas as pd
 
 url = "https://api.github.com/repos/VCurry20/data-representation-coursework"
-#datatest = pd.read_csv("employees.csv")
+data = "employees.csv"
+
+for repo in g.get_user().get_repos():
+   print("Confirm name of Repository", repo.name)
+
+
+fileInfo = repo.get_contents("text.txt")
+urlOfFile = fileInfo.download_url
+print ('this is print 2', urlOfFile)
+
+response = requests.get(urlOfFile)
+contentOfFile = response.text
+print ('this is print 3', contentOfFile)
+
+
+
 
 # reading the CSV file 
-text = open("employees.csv", "r") 
+text = open(data, "r") 
   
 #join() method combines all contents of  
 # csvfile.csv and formed as a string 
