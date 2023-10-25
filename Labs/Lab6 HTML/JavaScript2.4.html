@@ -1,0 +1,36 @@
+<htlm>
+    <head>
+        <title> Javascript 2.4  </title>
+        <!-- javascript can go in the head -->
+    </head>
+
+    <body>
+        <div id ="output">
+            output here
+        </div>
+
+
+
+
+
+
+        <!-- first function will output all numbers up to 49 to the console -->
+
+        <!-- second, in conjunction with the above will output to the page -->
+        <script>
+            for (var i=0; i<50; i++){
+                console.log(i)
+            }
+
+            var names=['Joe', 'Mary', 'Fred']
+            var output = ''
+            for (name of names){
+                output += name + '<br/>'
+            }
+            document.getElementById("output").innerHTML = output
+
+        </script>
+    
+    </body>
+
+</htlm>

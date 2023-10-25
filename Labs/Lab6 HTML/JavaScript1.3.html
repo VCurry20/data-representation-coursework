@@ -1,0 +1,26 @@
+<htlm>
+    <head>
+        <title> Javascript 1.3  </title>
+        <!-- javascript can go in the head -->
+
+    </head>
+    <!-- inout - id"name" in to a box - click the button and it outputs under the box -->
+    <body>
+        <input id="name" type="text"/>
+        <br/>
+
+        <button onclick="buttonClicked()">click me</button>>
+        <div id="output"> output will go here</div>
+
+
+    <script>
+        function buttonClicked(){
+            var output = document.getElementById('name').value
+            document.getElementById('output').innerText = output 
+        }
+
+
+    </script>
+
+    </body>
+</htlm>

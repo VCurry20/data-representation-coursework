@@ -1,0 +1,39 @@
+<htlm>
+    <head>
+        <title> Javascript 2.3  </title>
+        <!-- asks for input uses an if statements to evaluate number and outputs result-->
+        <!-- in this case, input a number and output a result -->
+
+
+    </head>
+
+    <body>
+    <!-- (this) - means from this element we can get the value -->
+
+        <input type="number" onchange="checkNumber(this)"/>
+        <br/>
+        <div id="output">
+            output here
+        </div>
+
+
+
+
+    <!-- functions writted and listed here -->
+        <script>
+            function checkNumber(inputElement){
+                var value = inputElement.value
+                if( value <10){
+                    document.getElementById("output").innerText="too low"
+                }else if (value > 10){
+                    document.getElementById("output").innerText="too high"
+                }else{
+                    document.getElementById("output").innerText="just right"
+                }
+            }
+
+        </script>
+    
+    </body>
+
+</htlm>
