@@ -1,0 +1,36 @@
+<htlm>
+    <head>
+        <title> Javascript 3.2  </title>
+        <!-- Parent / Child Nodes - - DOM Tree-->
+        <!-- This can be used for reading data from a table -->
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td>data1</td>
+                <td>data2</td>
+                <td><button onclick="doRow(this)">output</button></td>
+            </tr>
+        </table>
+
+    </body>
+
+
+    <script>
+
+        function doRow(buttonElement){
+            var rowElement = buttonElement.parentNode.parentNode
+            var data={}
+            data.cell1 = rowElement.cells[0].firstChild.textContent;
+            data.cell2 = rowElement.cells[1].firstChild.textContent;
+            
+            console.log(JSON.stringify(data))
+
+        }
+
+    </script>
+    
+    </body>
+
+</htlm>

@@ -1,19 +1,31 @@
 <htlm>
     <head>
-        <title> Javascript 2.1  </title>
-        <!-- javascript can go in the head -->
+        <title> Javascript 3.1  </title>
+        <!-- various inputs - save to console in json  -->
     </head>
 
     <body>
-
-
-
+        <div id="myForm">
+        First Name <input type="text" name="firstName"/><br/>
+        Last Name <input type="text" name="lastName"/><br/>
+        Age <input type="text" name="age"/><br/>
+        <button onclick="doForm()">go</button>
+        </div>
 
 
 
 
 
         <script>
+            function doForm(){
+                var employee={}
+                var form= document.getElementById("myForm")
+                employee.firstName = form.querySelector('input[name="firstName"]').value
+                employee.lastName = form.querySelector('input[name="lastName"]').value
+                employee.age = form.querySelector('input[name="age"]').value
+
+                console.log("form dada"+JSON.stringify(employee))
+            }
 
         </script>
     
