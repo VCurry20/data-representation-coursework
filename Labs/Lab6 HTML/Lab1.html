@@ -12,11 +12,10 @@
     </head>
 
     <body>
-
-        <h1> Books </h1>
-    
-        <button onclick="doForm()"> Create a Book </button> 
-
+        <h1>Books</h1>
+        <div><button id="button-showCreate" onclick="showCreate()">Create a book</button><br/><br/></div>
+        <div>
+        
         <br/>
         <br/>
 
@@ -36,8 +35,8 @@
                     <td>Harry Potter does something</td>
                     <td>JK Rowling</td>
                     <td>12</td>
-                    <td><button>update</button></td>
-                    <td><button>delete</button></td>
+                    <td><button onclick="showUpdate(this)">update</button></td>
+                    <td><button onclick="doDelete(this)">delete</button></td>
                 </tr>
 
         
@@ -50,6 +49,7 @@
         <div id='createUpdateForm' style="display:none">
             Inputs 
             <br/>
+            <h2><span id="createLabel">Create a</span> <span id="updateLabel">Update this</span> Book</h2>
             id <input type="text" name="id"> <br/>
 
             Title <input type="text" name="Title"> <br/>
@@ -64,15 +64,10 @@
             
         
             <br/>
-            <span><button id="button_ShowCreate" onclick="showCreate()"> Create </button></span>
-            <span><button style="display:none"> Update </button></span> <br/>
+            <span><button id="button-doCreate" onclick="doCreate()">Create</button></span>
+ 			<span><button id="button-doUpdate" onclick="doUpdate()">Update</button></span>
+             <!-- "display:none" will make it hidden-->
 
-
-            <h2>
-                <span id="createLabel"> Create a </span>
-                <span id="updateLabel" style="display:none"> Update This </span> Book
-
-            </h2> <br/>
 
         </div>
 
@@ -82,23 +77,51 @@
         <script>
 
             function showCreate(){
-                document.getElementById("button_ShowCreate").style.display="none"
-                document.getElementById("bookTable").style.display="none"
+                console.log("show create")
 
                 document.getElementById("createUpdateForm").style.display="block"
-
-                document.getElementById("createLabel").style.display="inline"
-                document.getElementById("updateLabel").style.display="none"
-
+                
                 document.getElementById("button_doCreate").style.display="block"
                 document.getElementById("button_doUpdate").style.display="none"
+                document.getElementById("createLabel").style.display="inline"
+                document.getElementById("updateLabel").style.display="none"
+              
+
+                document.getElementById("button_ShowCreate").style.display="none"
+                document.getElementById("bookTable").style.display="none"                                     
+                
             }
 
+            function showUpdate(){
+                console.log("show update")
+                document.getElementById("createUpdateForm").style.display = "block"
+           
+                document.getElementById("button-doCreate").style.display = "none"
+                document.getElementById("button-doUpdate").style.display = "block"
+                document.getElementById("createLabel").style.display = "none"
+                document.getElementById("updateLabel").style.display = "inline"
 
+                document.getElementById("button-showCreate").style.display = "none"
+                document.getElementById("bookTable").style.display = "none"
 
+                rowElement= buttonElement.parentNode.parentNode
+                book = getBookFromRow(rowElement)
+                
+                populateFormWithBook(book)
 
+            }
 
+            function doDelete(){
+                console.log("delete a book")
+            }
 
+            function button_doCreate(){
+                console.log("create a book")
+            }
+
+            function button_doUpdate(){
+                console.log("do update")
+            }    
 
 
 
