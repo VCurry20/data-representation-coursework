@@ -1,0 +1,34 @@
+<htlm>
+    <head>
+        <title> Javascript 3.2  </title>
+        <!-- selecting up and down a row in a table -->
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <!-- takes the data from this table and outputs to console -->
+                <td>data1</td>
+                <td>data2</td>
+                <td><button onclick="doRow(this)">output</button></td>
+                
+            </tr>
+        </table>
+    </body>
+
+        <script>
+
+            function doRow(buttonElement){
+                var rowElement = buttonElement.parentNode.parentNode
+                var data={}
+                data.cell1 = rowElement.cells[0].firstChild.textContent;
+                data.cell2 = rowElement.cells[1].firstChild.textContent;
+
+                console.log(JSON.stringify(data))
+            }
+
+        </script>
+    
+   
+
+</htlm>

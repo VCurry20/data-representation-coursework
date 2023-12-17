@@ -1,0 +1,32 @@
+<htlm>
+    <head>
+        <title> Javascript 2.1  </title>
+        <!-- javascript can go in the head -->
+    </head>
+
+    <body>
+        <div id="output">
+            output here
+            khv
+            </div>
+
+
+
+        <script>
+
+            for ( var i=0; i<10; i++){
+                console.log(i)
+            }
+
+            var names=['joe', 'mary', 'fred']
+            var output=''
+            for (name of names){
+                output += name+ '<br/>'
+            }
+            document.getElementById("output").innerHTML = output
+
+        </script>
+    
+    </body>
+
+</htlm>

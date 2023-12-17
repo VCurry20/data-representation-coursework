@@ -1,0 +1,41 @@
+<htlm>
+    <head>
+        <title> Javascript 2.2  </title>
+        <!-- swap between divs -->
+    </head>
+
+    <body>
+       
+
+        <div id="div1" style="background-color: royalblue">
+            <br/>
+            This is div1 <br/>
+            <button onclick="showDiv2()">Show Div2</button>
+        </div>
+
+        <div id="div2" style="background-color: red; display: none">
+            <br/>
+            This is div2 <br/>
+            <button onclick="showDiv1()">Show Div1</button>
+        </div>
+
+
+        
+        <script>
+            function showDiv2(){
+                document.getElementById("div1").style.display = "none";
+                document.getElementById("div2").style.display = "block";
+            }
+
+
+            function showDiv1(){
+                document.getElementById("div1").style.display = "block";
+                document.getElementById("div2").style.display = "none";
+            }
+
+
+        </script>
+    
+    </body>
+
+</htlm>

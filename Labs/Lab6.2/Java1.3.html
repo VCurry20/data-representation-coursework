@@ -1,0 +1,29 @@
+<htlm>
+    <head>
+        <title> Javascript 1.3  </title>
+        <!-- javascript can go in the head -->
+    </head>
+
+    <body>
+        <input id="name" type="text"/>
+        <br/>
+        <button onclick="buttonClicked()">click</button><br/>
+        <div id="output">output</div>
+
+
+
+
+
+
+
+        <script>
+            function buttonClicked(){
+                var output=document.getElementById('name').value
+                document.getElementById("output").innerText= output
+            }
+
+        </script>
+    
+    </body>
+
+</htlm>
