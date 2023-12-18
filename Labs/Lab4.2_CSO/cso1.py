@@ -29,7 +29,7 @@ def getAll():
 
 
 if __name__=="__main__":
-    with open("cso_json_all", "wt") as fp:
+    with open("cso.json_all", "wt") as fp:
       print(json.dumps(getAll()), file=fp)
 
 
@@ -49,7 +49,7 @@ def getAll2(dataset):
 
 
 if __name__=="__main__":
-    with open("cso_json_all2", "wt") as fp:
+    with open("cso.json_all2", "wt") as fp:
       print(json.dumps(getAll2("FP001")), file=fp)
 
 
@@ -58,7 +58,7 @@ if __name__=="__main__":
 # Alternative way to break up the code
 
 def getAllAsFile(dataset):
-   with open("cso_json_all3", "wt") as fp:
+   with open("cso.json_all3", "wt") as fp:
       print(json.dumps(getAll2(dataset)), file=fp)
 
 def getAll3(dataset):
@@ -68,7 +68,7 @@ def getAll3(dataset):
 
 
 def getFormattedAsFile(dataset):
-   with open("cso_formatted.json", "wt") as fp:
+   with open("cso.formatted.json", "wt") as fp:
       print(json.dumps(getAllFormatted(dataset)), file=fp) 
 
 

@@ -10,7 +10,7 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-cursor.execute("create DATABASE datarepresentation")
+cursor.execute("create DATABASE data_rep")
 
 db.close()
 cursor.close()

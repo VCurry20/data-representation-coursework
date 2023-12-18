@@ -5,7 +5,7 @@ mydb = mysql.connector.connect(
  host="localhost",
  user="root",
  password="",
- database="datarepresentation"
+ database="data_rep"
 )
 
 mycursor = mydb.cursor()
